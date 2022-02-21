@@ -8,7 +8,7 @@ const url = 'https://malachite-holistic-grey.glitch.me/movies'
 function allMovies() {
     fetch(url)
         .then(resolve => resolve.json())
-         .then(data => console.log(data))
+        .then(data => console.log(data))
         .catch(error => console.log(error))
 }
 
@@ -19,7 +19,7 @@ console.log(allMovies())
 function addMovie() {
     const addingMovie = {
         title: '',
-        director: ''
+        rating: $('#rating-score').val(),
     }
     const options = {
         method: 'POST',
@@ -29,12 +29,10 @@ function addMovie() {
         body: JSON.stringify(addingMovie),
     };
     fetch(`${url}`, options)
-        .then(resolve => {
-            console.log('Movie has been created')
-        })
-        .catch(error => console.log(error))
+        .then(resolve => resolve.json()
+            .then(data => console.log(data)));
 }
-
+allMovie()
 // Delete Movies
 
 function deleteMovies(id) {
@@ -42,10 +40,9 @@ function deleteMovies(id) {
         method: 'DELETE'
     }
     fetch(`${url}/${id}`, options)
-        .then(resolve => {
-            console.log('Movie has been deleted')
-        })
-        .catch(error => console.log(error))
+        .then(resolve => resolve.json()
+            .then(data => console.log(data)));
+
 }
 
 
@@ -54,7 +51,9 @@ function deleteMovies(id) {
 function updateMovie(id) {
     const updatingMovie = {
         title: '',
-        rating: ''
+        rating: '',
+        year : '',
+        genre : '',
 
     }
     const options = {
@@ -65,8 +64,6 @@ function updateMovie(id) {
         body: JSON.stringify(updatingMovie),
     }
     fetch(`${url}/${id}`, options)
-        .then(resolve => {
-            console.log('Movie has been updated')
-        })
-        .catch(error => console.log(error))
+        .then(resolve => resolve.json()
+            .then(data => console.log(data)));
 }

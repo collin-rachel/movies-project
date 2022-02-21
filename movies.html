@@ -21,20 +21,26 @@
 <!--TODO Nav Bar-->
 <nav class="navbar">
     <form class="form-inline">
-        <input class="filter">
+        <input class="filter" placeholder="Search">
     </form>
 </nav>
-<div id="">
-    <button id="addMovie">Add a Movie</button>
-    <div id="formSection">
+<div class="card">
+    <div class="card-header my-card-header"><h3>Add Movie</h3></div>
+    <div class="card">
+        <div class="card-header"><h5>Rating</h5></div>
         <input placeholder="Title" id="title" value="" >
         <input placeholder="Year" id="year" value="">
-        <select name="rating" id="ratingScore">
+        <select name="rating" id="rating-score">
             <option value="">Select your Rating</option>
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
         </select>
         <select name="genre" id="genre">
             <option value="">Select your Genre</option>
@@ -47,8 +53,6 @@
         <button id="submit">Submit</button>
     </div>
 </div>
-
-
 
 <script src="movie-request.js"></script>
 </body>
