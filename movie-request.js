@@ -2,17 +2,19 @@
 
 const url = 'https://malachite-holistic-grey.glitch.me/movies'
 
-// Get All Movies
+
+// Gets All Movies
 
 function allMovies() {
     fetch(url)
-        .then(resolve => resolve.json()).then(data => console.log(data))
+        .then(resolve => resolve.json())
+         .then(data => console.log(data))
         .catch(error => console.log(error))
 }
 
 console.log(allMovies())
 
-// Add a Movie
+// Adds a Movie
 
 function addMovie() {
     const addingMovie = {
@@ -42,6 +44,29 @@ function deleteMovies(id) {
     fetch(`${url}/${id}`, options)
         .then(resolve => {
             console.log('Movie has been deleted')
+        })
+        .catch(error => console.log(error))
+}
+
+
+// Update a movie
+
+function updateMovie(id) {
+    const updatingMovie = {
+        title: '',
+        rating: ''
+
+    }
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatingMovie),
+    }
+    fetch(`${url}/${id}`, options)
+        .then(resolve => {
+            console.log('Movie has been updated')
         })
         .catch(error => console.log(error))
 }
