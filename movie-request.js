@@ -4,6 +4,7 @@ const url = 'https://malachite-holistic-grey.glitch.me/movies'
 
     //function calls
     allMovies()
+    deleteMovies(6)
 
 
 
@@ -17,38 +18,26 @@ const url = 'https://malachite-holistic-grey.glitch.me/movies'
 function allMovies() {
     fetch(url)
         .then(resolve => resolve.json())
-        .then(data => {
-
+        .then(data =>  {
+            console.log(data)
             for (let i = 0; i < data.length; i++) {
-                let title = data[i].id.title
-                let director = data[i].id.director
-                let year = data[i].id.year
-                let genre = data[i].id.genre
-                let actors = data[i].id.actors
-                let plot = data[i].id.plot
-                let rating = data[i].id.rating
-                let poster = data[i].id.poster
-
 
                 let html = ''
                 html += `
                     <div class="card" style="width: 18rem;">
-<!--                        <img src="..." class="card-img-top" alt="...">-->
+                        <img src="${data[i].poster}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">${title}</h5>
-                            <p class="card-text"> ${plot}.</p>
+                            <h5 class="card-title">${data[i].title}</h5>
+                            <p class="card-text"> ${data[i].plot}</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">${title}</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">5/${data[i].rating}</li>
+                            <li class="list-group-item">${data[i].year}</li>
+                            <li class="list-group-item">${data[i].genre}</li>
                         </ul>
-<!--                        <div class="card-body">-->
-<!--                            <a href="#" class="card-link">Card link</a>-->
-<!--                            <a href="#" class="card-link">Another link</a>-->
-<!--                        </div>-->
+                        <input id="delete-movie" type="button" value="delete movie" onclick="deleteMovies(id)">
                     </div>
-                    
+        
                 `
 
                 $('#all-movies').append(html)
@@ -114,19 +103,4 @@ function updateMovie(id) {
 }
 
 
-// // puts movies on page
-//     function getMovies() {
-//
-//     $.get(url)
-//         .done(function (data) {
-//             console.log(data);
-//
-//             for (let i = 0; i < ; i++) {
-//                 var actors = data[1].actors
-//                 var director = data.director[i]
-//                 console.log(actors)
-//             }
-//         })
-//     }
-//
 
