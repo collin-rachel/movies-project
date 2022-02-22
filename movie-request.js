@@ -2,8 +2,14 @@
 
 const url = 'https://malachite-holistic-grey.glitch.me/movies'
 
-//function calls
-allMovies()
+    //function calls
+    allMovies()
+
+
+
+
+
+
 
 
 // Gets All Movies
@@ -11,8 +17,9 @@ allMovies()
 function allMovies() {
     fetch(url)
         .then(resolve => resolve.json())
-        .then(data => {
+        .then(data =>  {
             console.log(data)
+            console.log(data[1].id.title)
             for (let i = 0; i < data.length; i++) {
 
                 let html = ''
@@ -28,7 +35,7 @@ function allMovies() {
                             <li class="list-group-item">${data[i].year}</li>
                             <li class="list-group-item">${data[i].genre}</li>
                         </ul>
-                        <input id="delete-movie" type="button" value="Delete" onclick="deleteMovies(id)">
+                        <input id="delete-movie" type="button" value="delete movie">
                     </div>
         
                 `
@@ -39,20 +46,9 @@ function allMovies() {
         .catch(error => console.log(error))
 }
 
-//Call the function
-function callFunctions() {
-    let data = [];
-    fetch(url)
-        .then(response => response.json())
-        .then(response => {
-            data = response;
-            console.log(data);
-            deleteMovies();
 
-        });
-}
 
-// TODO Adds a Movie
+// Adds a Movie
 
 function addMovie() {
     const addingMovie = {
@@ -71,27 +67,20 @@ function addMovie() {
             .then(data => console.log(data)));
 }
 
-// TODO Delete Movies
-const deleteMovie = (id) => fetch(`${url}/${id}`, {
-    method: 'DELETE',
-
-})
-    .then(resolve => resolve.json()
-    ).then(data => {
-        callFunctions()
-        console.log(data);
-    }).catch(error => console.log(error));
-
-
+// Delete Movies
 
 function deleteMovies(id) {
-    $("body").on("click", ".delete", function () {
-        deleteMovie($(this).parent().children().id()[0].innerText).then();
-        $(this).parent().remove();
-    });
+    const options = {
+        method: 'DELETE'
+    }
+    fetch(`${url}/${id}`, options)
+        .then(resolve => resolve.json()
+            .then(data => console.log(data)));
+
 }
 
-// TODO Update a movie
+
+// Update a movie
 
 function updateMovie(id) {
     const updatingMovie = {
@@ -112,3 +101,21 @@ function updateMovie(id) {
         .then(resolve => resolve.json()
             .then(data => console.log(data)));
 }
+
+
+// // puts movies on page
+//     function getMovies() {
+//
+//     $.get(url)
+//         .done(function (data) {
+//             console.log(data);
+//
+//             for (let i = 0; i < ; i++) {
+//                 var actors = data[1].actors
+//                 var director = data.director[i]
+//                 console.log(actors)
+//             }
+//         })
+//     }
+//
+
