@@ -2,19 +2,8 @@
 
 const url = 'https://malachite-holistic-grey.glitch.me/movies'
 
-<<<<<<< HEAD
-    //function calls
-    allMovies()
-
-
-
-
-
-
-=======
 //function calls
 allMovies()
->>>>>>> d1ee54518b637770c4dad7c67691988ad8d42354
 
 
 // Gets All Movies
@@ -24,7 +13,6 @@ function allMovies() {
         .then(resolve => resolve.json())
         .then(data => {
             console.log(data)
-            console.log(data[1].id.title)
             for (let i = 0; i < data.length; i++) {
 
                 let html = ''
@@ -40,11 +28,7 @@ function allMovies() {
                             <li class="list-group-item">${data[i].year}</li>
                             <li class="list-group-item">${data[i].genre}</li>
                         </ul>
-<<<<<<< HEAD
-                        <input id="delete-movie" type="button" value="delete movie">
-=======
                         <input id="delete-movie" type="button" value="Delete" onclick="deleteMovies(id)">
->>>>>>> d1ee54518b637770c4dad7c67691988ad8d42354
                     </div>
         
                 `
@@ -128,21 +112,3 @@ function updateMovie(id) {
         .then(resolve => resolve.json()
             .then(data => console.log(data)));
 }
-
-
-// // puts movies on page
-//     function getMovies() {
-//
-//     $.get(url)
-//         .done(function (data) {
-//             console.log(data);
-//
-//             for (let i = 0; i < ; i++) {
-//                 var actors = data[1].actors
-//                 var director = data.director[i]
-//                 console.log(actors)
-//             }
-//         })
-//     }
-//
-
