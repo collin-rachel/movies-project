@@ -22,21 +22,22 @@ function allMovies() {
                 html += `
                     <div class="card" id="cards" style="width: 12rem;">
                         <img src="${data[i].poster}" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <div class="card-body" id="card-body">
                             <h5 class="card-title">${data[i].title}</h5>
-                            <p class="card-text"> ${data[i].plot}</p>
+                            <p class="card-text" id="plot-box"> ${data[i].plot}</p>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">5/${data[i].rating}</li>
-                            <li class="list-group-item">${data[i].year}</li>
-                            <li class="list-group-item">${data[i].genre}</li>
+                        <ul class="list-group list-group-flush" id="list">
+                            <li class="list-group-item" id="list-group-item">5/${data[i].rating}</li>
+                            <li class="list-group-item" id="list-group-item">${data[i].year}</li>
+                            <li class="list-group-item" id="list-group-item">${data[i].genre}</li>
                         </ul>
-                        <input id="delete-movie" type="button" value="Delete" onclick="deleteMovies(${data[i].id})">
                         
-                        <button type="button" data-id="${data[i].id}" class="btn btn-primary edit-btn" data-toggle="modal" data-target="#exampleModal">
-                            Edit
-                        </button>
-<!--                        <input id="edit-movie" type="button" value="edit" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+                        <button type="button" data-id="${data[i].id}"onclick="deleteMovies(${data[i].id})" id="card-btns"  ><i class="fas fa-trash"></i></button>
+                        <button type="button" data-id="${data[i].id}" class="btn edit-btn" data-toggle="modal" id="card-btns" data-target="#exampleModal"><i class="fas fa-pencil-alt" ></i></button>
+                        
+<!--                    <input id="edit-movie" type="button" value="edit" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+<!--                    <input id="delete-movie" type="button" value="delete" onclick="deleteMovies(${data[i].id})">-->
+                            
                     </div>
         
                 `
@@ -89,7 +90,10 @@ function deleteMovies(id) {
 
 function updateMovie(id) {
     const updatingMovie = {
-        title: $('#edit-title').val(), rating: $('#edit-rating-score').val(), year: $('#edit-year').val(), genre: $('#edit-genre').val(),
+        title: $('#edit-title').val(),
+        rating: $('#edit-rating-score').val(),
+        year: $('#edit-year').val(),
+        genre: $('#edit-genre').val(),
 
     }
     const options = {
@@ -128,3 +132,4 @@ $('#save-changes').click(function (){
 
 
 //----------curtain-------------------------
+
