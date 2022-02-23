@@ -108,7 +108,7 @@ function updateMovie(id) {
 //event listeners
 $('#submit').click(function () {
     addMovie()
-    updateMovie()
+
 })
 
 $(document).on('click', '.edit-btn', function (){
