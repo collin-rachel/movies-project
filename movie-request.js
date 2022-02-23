@@ -93,14 +93,19 @@ function updateMovie(id) {
 
     }
     const options = {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
         }, body: JSON.stringify(updatingMovie),
     }
     fetch(`${url}/${id}`, options)
         .then(resolve => resolve.json()
-            .then(data => console.log(data)));
+            .then(data => {
+                $('#exampleModal').modal('hide');
+                console.log('try to hide modal')
+                console.log(data)
+                allMovies()
+            }));
 
 }
 
