@@ -20,7 +20,7 @@ function allMovies() {
 
                 let html = ''
                 html += `
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" id="cards" style="width: 12rem;">
                         <img src="${data[i].poster}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${data[i].title}</h5>
@@ -118,3 +118,7 @@ $(document).on('click', '.edit-btn', function (){
 $('#save-changes').click(function (){
     updateMovie($(this).attr('data-id'))
 })
+
+
+
+//----------curtain-------------------------

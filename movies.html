@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
+    <link rel="stylesheet" href="movies.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Movies</title>
 
 </head>
 <body>
+
+<div class="container">
+
 <!--TODO Loading screen-->
 <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
 </div>
 
-<div class="jumbotron">
+<div class="jumbotron" id="jumbotron">
     <h1>Movie Selector</h1>
 </div>
 
+
+
+
 <!--TODO Nav Bar-->
+
+
 <nav class="navbar">
     <form class="form-inline">
         <input class="filter" placeholder="Search">
@@ -26,12 +34,12 @@
 </nav>
 
 
-
+<!--div with movies-->
 <div class="card movie-card" id="all-movies"></div>
 
 
 
-<div class="card">
+<div class="card" id="add-a-movie">
     <div class="card-header my-card-header"><h3>Add Movie</h3></div>
     <div class="card">
 
@@ -79,8 +87,21 @@
 </div>
 
 
+<!--curtains-------------------------------------------------------------------->
 
 
+
+
+
+
+
+
+
+
+
+
+
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>

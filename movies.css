@@ -1,0 +1,28 @@
+body {
+    background-image: url("img/theater.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+#all-movies {
+    background-color: transparent;
+    /*background-color: rgba(255,255,255,0.5);*/
+}
+
+#jumbotron {
+    background-color: transparent;
+}
+
+#cards {
+    background-color: transparent;
+    color: white ;
+}
+
+
+#add-a-movie {
+    width: 12rem;
+}
+
+
+/*cutrain------------------------------------------------------------------------------*/
