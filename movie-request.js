@@ -89,7 +89,7 @@ function deleteMovies(id) {
 
 function updateMovie(id) {
     const updatingMovie = {
-        title: '', rating: '', year: '', genre: '',
+        title: $('#edit-title').val(), rating: $('#edit-rating-score').val(), year: $('#edit-year').val(), genre: $('#edit-genre').val(),
 
     }
     const options = {
@@ -108,6 +108,7 @@ function updateMovie(id) {
 //event listeners
 $('#submit').click(function () {
     addMovie()
+    updateMovie()
 })
 
 $(document).on('click', '.edit-btn', function (){
