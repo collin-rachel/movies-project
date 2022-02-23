@@ -32,6 +32,11 @@ function allMovies() {
                             <li class="list-group-item">${data[i].genre}</li>
                         </ul>
                         <input id="delete-movie" type="button" value="Delete" onclick="deleteMovies(${data[i].id})">
+                        
+                        <button type="button" data-id="${data[i].id}" class="btn btn-primary edit-btn" data-toggle="modal" data-target="#exampleModal">
+                            Edit
+                        </button>
+<!--                        <input id="edit-movie" type="button" value="edit" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
                     </div>
         
                 `
@@ -44,27 +49,24 @@ function allMovies() {
 }
 
 
-
 // TODO Adds a Movie
 
 function addMovie() {
     const addingMovie = {
-        title: $('#title').val(),
-        year: $('#year').val(),
-        rating: $('#rating-score').val(),
-        genre: $('#genre').val()
+        title: $('#title').val(), year: $('#year').val(), rating: $('#rating-score').val(), genre: $('#genre').val()
     }
     const options = {
-        method: 'POST',
-        headers: {
+        method: 'POST', headers: {
             'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(addingMovie),
+        }, body: JSON.stringify(addingMovie),
     };
     fetch(`${url}`, options)
         .then(resolve => resolve.json()
-            .then(data => console.log(data)));
-        allMovies()
+            .then(data => {
+                console.log(data)
+                allMovies()
+            }));
+
 }
 
 // TODO Delete Movies
@@ -75,36 +77,25 @@ function deleteMovies(id) {
     }
     fetch(`${url}/${id}`, options)
         .then(resolve => resolve.json()
-            .then(data => {console.log(data)
+            .then(data => {
+                console.log(data)
                 allMovies()
             }));
 
 }
 
 
-
-
-
-
-
-
-
 // TODO Update a movie
 
 function updateMovie(id) {
     const updatingMovie = {
-        title: '',
-        rating: '',
-        year: '',
-        genre: '',
+        title: '', rating: '', year: '', genre: '',
 
     }
     const options = {
-        method: 'POST',
-        headers: {
+        method: 'POST', headers: {
             'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatingMovie),
+        }, body: JSON.stringify(updatingMovie),
     }
     fetch(`${url}/${id}`, options)
         .then(resolve => resolve.json()
@@ -113,8 +104,16 @@ function updateMovie(id) {
 }
 
 
-
 //event listeners
-    $('#submit').click(function (){
-        addMovie()
-    })
+$('#submit').click(function () {
+    addMovie()
+})
+
+$(document).on('click', '.edit-btn', function (){
+    console.log($(this).attr('data-id'))
+    $('#save-changes').attr('data-id', $(this).attr('data-id') )
+})
+
+$('#save-changes').click(function (){
+    updateMovie($(this).attr('data-id'))
+})
