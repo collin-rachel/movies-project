@@ -4,7 +4,7 @@ const url = 'https://malachite-holistic-grey.glitch.me/movies'
 
 //function calls
 allMovies()
-$(document).ready(function() {
+$(document).ready(function () {
     open_curtain()
 });
 
@@ -29,7 +29,7 @@ function allMovies() {
                             <p class="card-text" id="plot-box"> ${data[i].plot}</p>
                         </div>
                         <ul class="list-group list-group-flush" id="list">
-                            <li class="list-group-item" id="list-group-item">5/${data[i].rating}</li>
+                            <li class="list-group-item" id="list-group-item">${data[i].rating}/5</li>
                             <li class="list-group-item" id="list-group-item">${data[i].year}</li>
                             <li class="list-group-item" id="list-group-item">${data[i].genre}</li>
                         </ul>
@@ -38,7 +38,7 @@ function allMovies() {
                         <button type="button" data-id="${data[i].id}" class="btn edit-btn" data-toggle="modal" id="card-btns" data-target="#exampleModal"><i class="fas fa-pencil-alt" ></i></button>
                         
 <!--                    <input id="edit-movie" type="button" value="edit" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
-<!--                    <input id="delete-movie" type="button" value="delete" onclick="deleteMovies(${data[i].id})">-->
+<!--                    <input id="delete-movie" type="button" value="delete" onclick="deleteMovies()">-->
                             
                     </div>
         
@@ -125,12 +125,12 @@ $('#submit').click(function () {
 
 })
 
-$(document).on('click', '.edit-btn', function (){
+$(document).on('click', '.edit-btn', function () {
     console.log($(this).attr('data-id'))
-    $('#save-changes').attr('data-id', $(this).attr('data-id') )
+    $('#save-changes').attr('data-id', $(this).attr('data-id'))
 })
 
-$('#save-changes').click(function (){
+$('#save-changes').click(function () {
     updateMovie($(this).attr('data-id'))
 })
 
