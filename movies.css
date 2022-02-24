@@ -84,17 +84,17 @@ body {
 }
 #curtain1
 {
-    top:0px;
+    top:-1000px;
     position:absolute;
-    left:0px;
-    height:220px;
+    left:-500px;
+    height:100vh;
 }
 #curtain2
 {
     top:-1000px;
     position:absolute;
     height:100vh;
-    right:0px;
+    right:-400px;
     z-index: 1000;
 }
 #curtain_buttons input[type="button"]

@@ -4,7 +4,9 @@ const url = 'https://malachite-holistic-grey.glitch.me/movies'
 
 //function calls
 allMovies()
-
+$(document).ready(function() {
+    open_curtain()
+});
 
 // Gets All Movies
 
