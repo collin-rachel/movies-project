@@ -51,7 +51,7 @@
     background: none;
     /*color: white;*/
     border-style: none;
-    width: 0em;
+    width: 0;
 }
 
 /*cutrain------------------------------------------------------------------------------*/
@@ -125,8 +125,10 @@
 ul {
     list-style: none;
     display: flex;
+    padding-top: 20px;
     padding-left: 0;
     margin: 0;
+   font-family: Times;
 }
 
 .list {
@@ -136,7 +138,7 @@ ul {
 .anchor {
     text-decoration: none;
     color: black;
-    margin: 10px;
+    margin: 20px;
 }
 
 .Middle-Logo {
@@ -152,4 +154,5 @@ ul {
 
 .image-links p {
     margin: 1em;
+    padding-top: 0;
 }
