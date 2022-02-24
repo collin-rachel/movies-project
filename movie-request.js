@@ -56,7 +56,10 @@ function allMovies() {
 
 function addMovie() {
     const addingMovie = {
-        title: $('#title').val(), year: $('#year').val(), rating: $('#rating-score').val(), genre: $('#genre').val()
+        title: $('#title').val(),
+        year: $('#year').val(),
+        rating: $('#rating-score').val(),
+        genre: $('#genre').val()
     }
     const options = {
         method: 'POST', headers: {
@@ -133,5 +136,5 @@ $('#save-changes').click(function (){
 
 
 
-//----------curtain-------------------------
+
 

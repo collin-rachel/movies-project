@@ -30,53 +30,82 @@
 <!--TODO Nav Bar-->
 
 
-<!--<nav class="navbar">-->
-<!--    <form class="form-inline">-->
-<!--        <input class="filter" placeholder="Search">-->
-<!--    </form>-->
-<!--</nav>-->
+<nav class="navbar">
+    <form class="form-inline">
+        <input class="filter" placeholder="Search">
+    </form>
+</nav>
+
+
+
+
+<!--modal button-->
+<button type="button" id="card-btns"><i class="fas fa-plus"> Add a movie</i></button>
+
+
 
 
 <!--div with movies-->
 <div class="card movie-card" id="all-movies"></div>
 
 
+<!-- add movie modal   -->
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card" id="add-a-movie">
+                        <div class="card">
+                            <div class="card-header my-card-header"><h3>Add Movie</h3></div>
+                            <div class="card">
 
-<div class="card" id="add-a-movie">
-<div class="card">
-    <div class="card-header my-card-header"><h3>Add Movie</h3></div>
-    <div class="card">
-
-        <input placeholder="Title" id="title" value="">
-        <input placeholder="Year" id="year" value="">
-        <select name="rating" id="rating-score">
-            <option value="">Select your Rating</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
-        </select>
-        <select name="genre" id="genre">
-            <option value="">Select your Genre</option>
-            <option value="action">Action</option>
-            <option value="comedy">Comedy</option>
-            <option value="drama">Drama</option>
-            <option value="animated">Animated</option>
-            <option value="sport">Sport</option>
-        </select>
-        <button id="submit">Submit</button>
+                                <input placeholder="Title" id="title" value="">
+                                <input placeholder="Year" id="year" value="">
+                                <select name="rating" id="rating-score">
+                                    <option value="">Select your Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <select name="genre" id="genre">
+                                    <option value="">Select your Genre</option>
+                                    <option value="action">Action</option>
+                                    <option value="comedy">Comedy</option>
+                                    <option value="drama">Drama</option>
+                                    <option value="animated">Animated</option>
+                                    <option value="sport">Sport</option>
+                                </select>
+                                <button id="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-</div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-<!--                <h5 class="modal-title" id="exampleModalLabel">Movie Edit</h5>-->
-<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+
             </div>
+
+
             <div class="modal-body">
                 <div class="card">
                     <div class="card-header my-card-header"><h3>Movie Edit</h3></div>
@@ -113,22 +142,20 @@
 </div>
 <!--curtains-------------------------------------------------------------------->
 
-    <div id="wrapper">
+<!--    <div id="wrapper">-->
 
-        <div id="effect">
-            <p>Surprise You Got A Lottery!</p>
-            <img src="img/curtain1.jpeg" id="curtain1">
-            <img src="img/curtain2.jpeg" id="curtain2">
-        </div>
+<!--        <div id="effect">-->
+<!--            <p>Surprise You Got A Lottery!</p>-->
+<!--            <img src="img/curtain1.jpeg" id="curtain1">-->
+<!--            <img src="img/curtain2.jpeg" id="curtain2">-->
+<!--        </div>-->
 
-        <div id="curtain_buttons">
-            <input type="button" value="OPEN CURTAIN" id="open-curtain" onclick="open_curtain()">
-            <input type="button" value="CLOSE CURTAIN" id="close-curtain" onclick="close_curtain()">
-        </div>
+<!--        <div id="curtain_buttons">-->
+<!--            <input type="button" value="OPEN CURTAIN" id="open-curtain" onclick="open_curtain()">-->
+<!--            <input type="button" value="CLOSE CURTAIN" id="close-curtain" onclick="close_curtain()">-->
+<!--        </div>-->
 
-    </div>
-
-
+<!--    </div>-->
 
 
 
@@ -143,27 +170,29 @@
 
 
 
-<script type="text/javascript">
+
+
+<!--<script type="text/javascript">-->
 
 
 
 
-    function open_curtain()
-    {
-        $("#curtain1").animate({width:20},1000);
-        $("#curtain2").animate({width:20},1000);
-    }
-    function close_curtain()
-    {
-        $("#curtain1").animate({width:200},1000);
-        $("#curtain2").animate({width:191},1000);
-    }
+<!--    function open_curtain()-->
+<!--    {-->
+<!--        $("#curtain1").animate({width:20},1000);-->
+<!--        $("#curtain2").animate({width:20},1000);-->
+<!--    }-->
+<!--    function close_curtain()-->
+<!--    {-->
+<!--        $("#curtain1").animate({width:200},1000);-->
+<!--        $("#curtain2").animate({width:191},1000);-->
+<!--    }-->
 
 
 
 
 
-</script>
+<!--</script>-->
 
 
 
