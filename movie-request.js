@@ -1,11 +1,12 @@
 "use strict";
 
-const url = 'https://malachite-holistic-grey.glitch.me/movies'
+// const url = 'https://malachite-holistic-grey.glitch.me/movies'
+const url = 'http://localhost:8080//movies'
 
 //function calls
 allMovies()
 $(document).ready(function () {
-    open_curtain()
+    // open_curtain()
 });
 
 // Gets All Movies
@@ -102,7 +103,7 @@ function updateMovie(id) {
 
     }
     const options = {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         }, body: JSON.stringify(updatingMovie),
@@ -124,6 +125,10 @@ $('#submit').click(function () {
     addMovie()
 
 })
+
+// $('#card-btns').click(function (){
+//     console.log("hello")
+// });
 
 $(document).on('click', '.edit-btn', function () {
     console.log($(this).attr('data-id'))
